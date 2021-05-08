@@ -86,7 +86,7 @@ class AddExpanseActivity : AppCompatActivity() {
     }
 
     private fun setupDatePicker() {
-        binding.dateInput.transformIntoDatePicker(this, "dd.MM.yyyy", Date())
+        binding.dateInput.transformIntoDatePicker(this, "dd.MM.yyyy")
     }
 
     private fun setupSaveButton() = binding.addExpanseButton.setOnClickListener {

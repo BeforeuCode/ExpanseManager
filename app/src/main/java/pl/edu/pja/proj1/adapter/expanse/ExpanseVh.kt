@@ -2,6 +2,7 @@ package pl.edu.pja.proj1.adapter.expanse
 
 import android.graphics.Color
 import androidx.recyclerview.widget.RecyclerView
+import pl.edu.pja.proj1.R
 import pl.edu.pja.proj1.databinding.ItemExpanseBinding
 import pl.edu.pja.proj1.model.Expanse
 import java.text.SimpleDateFormat
@@ -17,8 +18,10 @@ class ExpanseVh(private  val binding: ItemExpanseBinding): RecyclerView.ViewHold
             onClickCallback(expanse)
         }
         if(expanse.isIncome) {
+            binding.icon.setImageResource(R.drawable.ic_income)
             binding.card.setCardBackgroundColor(Color.parseColor("#c5e1a5"))
         } else {
+            binding.icon.setImageResource(R.drawable.ic_expanse)
             binding.card.setCardBackgroundColor(Color.parseColor("#ef9a9a"))
         }
 

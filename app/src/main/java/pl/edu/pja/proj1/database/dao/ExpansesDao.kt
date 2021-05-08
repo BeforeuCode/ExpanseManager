@@ -45,4 +45,10 @@ interface ExpansesDao {
     @Update
     fun editExpanse(expanseDto: ExpanseDto)
 
+    @Query( "Select date from expanse where date between :startDate and :endDate order by id desc")
+    fun getEventDatesFromDateBetween(startDate: Date, endDate: Date): List<Date>
+
+    @Query( "Select amount from expanse where date between :startDate and :endDate order by id desc")
+    fun getEventAmountFromDateBetween(startDate: Date, endDate: Date): List<Double>
+
 }

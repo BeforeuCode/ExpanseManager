@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pl.edu.pja.proj1">
 
-    <permission android:name="pl.edu.pja.proj1.provider.READ_WRITE"/>
+    <permission android:name="pl.edu.pja.proj1.provider.READ_WRITE" />
 
     <application
         android:name=".App"
@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proj1">
+        <activity android:name=".activities.MpGraphActivity"></activity>
+        <activity android:name=".activities.ChartActivity" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,14 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.AddExpanseActivity" android:parentActivityName=".activities.MainActivity"/>
+        <activity
+            android:name=".activities.AddExpanseActivity"
+            android:parentActivityName=".activities.MainActivity" />
 
         <provider
             android:name=".provider.AppProvider"
             android:authorities="pl.edu.pja.proj1.provider"
             android:exported="true"
-            android:permission="pl.edu.pja.proj1.provider.READ_WRITE"/>
-
+            android:permission="pl.edu.pja.proj1.provider.READ_WRITE" />
     </application>
 
 </manifest>

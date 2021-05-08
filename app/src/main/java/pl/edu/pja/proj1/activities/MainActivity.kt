@@ -16,6 +16,7 @@ import pl.edu.pja.proj1.model.Expanse
 
 private const val REQUEST_ADD_EXPANSE = 10
 private const val REQUEST_EDIT_EXPANSE = 20
+private const val REQUEST_CHART_VIEW = 30
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
@@ -26,6 +27,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setupExpansesList()
         setupAddExpanseButton()
+        setupBalance()
+        setupChartButton()
+    }
+
+    private fun setupChartButton()  = binding.chartButton.setOnClickListener {
+        val intent = Intent(this, MpGraphActivity::class.java)
+        startActivityForResult(intent, REQUEST_CHART_VIEW)
         setupBalance()
     }
 
